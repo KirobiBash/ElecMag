@@ -1,0 +1,62 @@
+//Employee Class
+
+using System;
+
+namespace Assignment1
+{
+    class Employee
+    {
+        public String ename { get; set; }
+        public int eid { get; set; }
+        public double salary { get; set; }
+
+        public Employee(string name, int id) {
+            this.ename = name;
+            this.eid = id;
+        }
+
+        public Employee(string name, int id, double salary)
+        {
+            this.ename = name;
+            this.eid = id;
+            this.salary = salary;
+        }
+
+        public double salaryIncrement(double amount) {
+            return this.salary + amount;
+        }
+
+
+
+    }
+}
+
+
+//Program Class
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Employee e1 = new Employee("sahara", 1, 5000);
+
+            Console.WriteLine("Enter increment amount for {0}", e1.ename);
+            double amount = Convert.ToDouble(Console.ReadLine());
+
+            double updatedSalary = e1.salaryIncrement(amount);
+
+            Console.WriteLine("Initial Salary: {0}\nUpdated salary: {1}",e1.salary,updatedSalary);
+            Console.ReadLine();
+        }
+           
+    }
+}
+
